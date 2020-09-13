@@ -1,6 +1,12 @@
-const SinglyLinkedList = require('./src/Lists/SinglyLinkedList')
-const li = SinglyLinkedList.fromValues(10, 20, 30, 40, 50)
+const DoublyLinkedList = require('./src/Lists/DoublyLinkedList')
+
+const li = new DoublyLinkedList()
 
 li.print()
-li.removeAtIndex(2)
+li.insertAtHead(10)
+li.insertAtHead(20)
+li.insertAtHead(30)
+li.insertAtHead(40)
+li.insertAtHead(50)
+li.insertAtHead(60)
 li.print()

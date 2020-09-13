@@ -4,8 +4,8 @@ class SinglyLinkedList {
         this.length = 0
     }
 
-    insertAtHead(data) {
-        const newNode = new SinglyLinkedListNode(data, this.head)
+    insertAtHead(value) {
+        const newNode = new SinglyLinkedListNode(value, this.head)
         this.head = newNode
         this.length++
     }

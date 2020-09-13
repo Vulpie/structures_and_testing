@@ -1,7 +1,7 @@
 const SinglyLinkedList = require('../../src/Lists/SinglyLinkedList')
 
 describe('#insertAtHead', () => {
-    test(' it adds the element to the beggining of the list', () => {
+    test(' it adds the element to the beginning of the list', () => {
         const li = new SinglyLinkedList()
         li.insertAtHead(10)
         const oldHead = li.head
@@ -91,7 +91,7 @@ describe('#insertAtIndex', () => {
 })
 
 describe('#removeHead', () => {
-    test(' it adds the element to the beggining of the list', () => {
+    test(' it adds the element to the beginning of the list', () => {
         const li = new SinglyLinkedList.fromValues(10, 20, 30)
         li.removeHead()
 
