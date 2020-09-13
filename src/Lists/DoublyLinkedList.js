@@ -20,6 +20,40 @@ class DoublyLinkedList {
         oldHead.prev = this.head
     }
 
+    getByIndex(index) {
+        if (index < 0 || index >= this.length) return null
+
+        let current = this.head
+        for (let i = 0; i < index; i++) {
+            current = current.next
+        }
+        return current
+    }
+
+    insertAtIndex(index, value) {
+        if (index === 0) {
+            return this.insertAtHead(value)
+        }
+
+        const prevNode = this.getByIndex(index - 1)
+        if (!prevNode) return null
+
+        const nextNode = prevNode.next || null
+        const newNode = new DoublyLinkedListNode(value)
+
+        if (!nextNode) {
+            prevNode.next = newNode
+        } else {
+            nextNode.prev = newNode
+            prevNode.next = newNode
+        }
+
+        newNode.prev = prevNode
+        newNode.next = nextNode
+
+        this.length++
+    }
+
     print() {
         let current = this.head
         while (current) {
@@ -37,6 +71,14 @@ class DoublyLinkedListNode {
         this.prev = null
         this.next = null
     }
+}
+
+DoublyLinkedList.fromValues = function (...values) {
+    const li = new DoublyLinkedList()
+    for (let i = values.length - 1; i >= 0; i--) {
+        li.insertAtHead(values[i])
+    }
+    return li
 }
 
 module.exports = DoublyLinkedList

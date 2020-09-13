@@ -4,5 +4,5 @@ Implementation of JavaScript structures using Test-driven development technique
 
 ## Structures
 
--   SinglyLinkedLists
+-   SinglyLinkedList
 -   DoublyLinkedList
