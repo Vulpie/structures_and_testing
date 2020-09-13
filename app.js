@@ -1,6 +1,7 @@
 const DoublyLinkedList = require('./src/Lists/DoublyLinkedList')
-
+const SinglyLinkedList = require('./src/Lists/SinglyLinkedList')
 const li = new DoublyLinkedList()
+//const li = new SinglyLinkedList()
 
 li.print()
 li.insertAtHead(10)

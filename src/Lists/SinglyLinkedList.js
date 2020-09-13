@@ -54,13 +54,12 @@ class SinglyLinkedList {
     }
 
     print() {
-        let output = ''
         let current = this.head
         while (current) {
-            output = `${output}${current.value} -> `
+            const next = current.next ? current.next.value : 'Null'
+            console.log(`[${current.value}] -> ${next}`)
             current = current.next
         }
-        console.log(`${output}null`)
     }
 }
 
