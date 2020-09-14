@@ -1,7 +1,7 @@
 class StackNode {
-	constructor(value, upperNode) {
+	constructor(value, lowerNode) {
 		this.value = value
-		this.upperNode = upperNode
+		this.lowerNode = lowerNode
 	}
 }
 
