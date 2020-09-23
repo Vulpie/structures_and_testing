@@ -6,3 +6,4 @@ Implementation of JavaScript structures using Test-driven development technique
 
 -   SinglyLinkedList
 -   DoublyLinkedList
+-   Stack
