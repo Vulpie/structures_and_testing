@@ -1,14 +1,14 @@
 const StackNode = require('./StackNode')
 
 class Stack {
-	constructor(limit = 0) {
+	constructor(limit = null) {
 		this.top = null
 		this.length = 0
 		this.limit = limit
 	}
 
 	push(value) {
-		if (this.length === this.limit && this.limit !== 0) return null
+		if (this.length === this.limit) return null
 
 		const oldTop = this.top
 		const newNode = new StackNode(value, oldTop)
@@ -30,6 +30,11 @@ class Stack {
 		return null
 	}
 
+	isFull() {
+		if (this.limit !== this.length) return false
+		return true
+	}
+
 	print() {
 		let currentNode = this.top
 		while (currentNode) {
@@ -40,8 +45,8 @@ class Stack {
 	}
 }
 
-Stack.fromValues = function (...values) {
-	const stack = new Stack()
+Stack.fromValues = function (values = [], limit) {
+	const stack = new Stack(limit)
 	for (let i = 0; i <= values.length - 1; i++) {
 		stack.push(values[i])
 	}

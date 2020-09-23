@@ -32,7 +32,7 @@ describe('#push', () => {
 describe('#pop', () => {
 	describe('stack is not empty', () => {
 		test('remove element from the top', () => {
-			const stack = Stack.fromValues(5, 6, 3, 7, 3)
+			const stack = Stack.fromValues([5, 6, 3, 7, 3])
 			stack.pop()
 			expect(stack.top.value).toBe(7)
 			expect(stack.length).toBe(4)
@@ -52,7 +52,7 @@ describe('#pop', () => {
 describe('#pop', () => {
 	describe('stack is not empty', () => {
 		test('return the value of top element', () => {
-			const stack = Stack.fromValues(5, 6, 3, 7, 3)
+			const stack = Stack.fromValues([5, 6, 3, 7, 3])
 			expect(stack.length).toBe(5)
 			expect(stack.peek()).toBe(3)
 			expect(stack.length).toBe(5)
@@ -64,6 +64,48 @@ describe('#pop', () => {
 			const stack = Stack.fromValues()
 			expect(stack.peek()).toBeNull()
 			expect(stack.length).toBe(0)
+		})
+	})
+})
+
+describe('#isFull', () => {
+	describe('stack is not empty or full', () => {
+		test('return false', () => {
+			const stack = Stack.fromValues([15, 23, 66, 5, 2, 4, 9], 9)
+			expect(stack.isFull()).toBe(false)
+			const length = stack.length
+			const limit = stack.limit
+			expect(length).not.toBe(limit)
+		})
+	})
+
+	describe('stack is empty', () => {
+		test('return false', () => {
+			const stack = Stack.fromValues()
+			expect(stack.isFull()).toBe(false)
+			const length = stack.length
+			const limit = stack.limit
+			expect(length).not.toBe(limit)
+		})
+	})
+
+	describe('stack is full', () => {
+		test('return true', () => {
+			const stack = Stack.fromValues([15, 23, 66, 5, 2, 4, 9], 7)
+			expect(stack.isFull()).toBe(true)
+			const length = stack.length
+			const limit = stack.limit
+			expect(length).toBe(limit)
+		})
+	})
+
+	describe('stack does not have a limit', () => {
+		test('return false', () => {
+			const stack = Stack.fromValues([15, 23, 66, 5, 2, 4, 9])
+			expect(stack.isFull()).toBe(false)
+			const length = stack.length
+			const limit = stack.limit
+			expect(length).not.toBe(limit)
 		})
 	})
 })
