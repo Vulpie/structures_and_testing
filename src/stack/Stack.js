@@ -17,6 +17,14 @@ class Stack {
 		this.length++
 	}
 
+	pop() {
+		if (this.length === 0) return null
+
+		const current_top = this.top
+		this.top = current_top.lowerNode
+		this.length--
+	}
+
 	print() {
 		let currentNode = this.top
 		while (currentNode) {
@@ -25,6 +33,14 @@ class Stack {
 		}
 		console.log('______')
 	}
+}
+
+Stack.fromValues = function (...values) {
+	const stack = new Stack()
+	for (let i = 0; i <= values.length - 1; i++) {
+		stack.push(values[i])
+	}
+	return stack
 }
 
 module.exports = Stack
