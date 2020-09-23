@@ -25,6 +25,11 @@ class Stack {
 		this.length--
 	}
 
+	peek() {
+		if (this.top) return this.top.value
+		return null
+	}
+
 	print() {
 		let currentNode = this.top
 		while (currentNode) {

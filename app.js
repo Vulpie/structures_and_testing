@@ -9,4 +9,5 @@ const Stack = require('./src/Stack/Stack')
 
 const stack = Stack.fromValues(5, 6, 3, 7, 8, 3)
 stack.pop()
+console.log(stack.peek())
 stack.print()

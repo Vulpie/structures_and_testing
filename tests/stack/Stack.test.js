@@ -30,8 +30,8 @@ describe('#push', () => {
 })
 
 describe('#pop', () => {
-	describe('with no limit', () => {
-		test('remove element from the top, stack is not empty', () => {
+	describe('stack is not empty', () => {
+		test('remove element from the top', () => {
 			const stack = Stack.fromValues(5, 6, 3, 7, 3)
 			stack.pop()
 			expect(stack.top.value).toBe(7)
@@ -39,11 +39,30 @@ describe('#pop', () => {
 		})
 	})
 
-	describe('with limit', () => {
+	describe('stack is empty', () => {
 		test('return null', () => {
 			const stack = Stack.fromValues()
 			stack.pop()
 			expect(stack.top).toBeNull()
+			expect(stack.length).toBe(0)
+		})
+	})
+})
+
+describe('#pop', () => {
+	describe('stack is not empty', () => {
+		test('return the value of top element', () => {
+			const stack = Stack.fromValues(5, 6, 3, 7, 3)
+			expect(stack.length).toBe(5)
+			expect(stack.peek()).toBe(3)
+			expect(stack.length).toBe(5)
+		})
+	})
+
+	describe('stack is empty', () => {
+		test('return null', () => {
+			const stack = Stack.fromValues()
+			expect(stack.peek()).toBeNull()
 			expect(stack.length).toBe(0)
 		})
 	})
