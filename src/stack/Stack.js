@@ -35,6 +35,11 @@ class Stack {
 		return true
 	}
 
+	isEmpty() {
+		if (this.length === 0) return true
+		return false
+	}
+
 	print() {
 		let currentNode = this.top
 		while (currentNode) {

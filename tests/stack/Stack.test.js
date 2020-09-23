@@ -109,3 +109,19 @@ describe('#isFull', () => {
 		})
 	})
 })
+
+describe('#isEmpty', () => {
+	describe('stack is empty', () => {
+		test('return true', () => {
+			const stack = Stack.fromValues()
+			expect(stack.isEmpty()).toBe(true)
+		})
+	})
+
+	describe('stack is not empty', () => {
+		test('return false', () => {
+			const stack = Stack.fromValues([15, 23, 66, 5, 2, 4, 9])
+			expect(stack.isEmpty()).toBe(false)
+		})
+	})
+})
