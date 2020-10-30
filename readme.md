@@ -1,6 +1,6 @@
 # Structures and tests
 
-Implementation of JavaScript structures using Test-driven development technique
+Implementation of data structures in JavaScript using Test-driven development technique
 
 ## Structures
 
